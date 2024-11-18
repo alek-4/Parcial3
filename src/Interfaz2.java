@@ -125,13 +125,13 @@ public class Interfaz2 {
 
     private void PasarCompañia() {
         if (aeropuertoSeleccionado != null) {
-            JFrame tercerFrame = new JFrame("Compañías - " + aeropuertoSeleccionado.nombre);
+            JFrame tercerFrame = new JFrame("Compañías del aeropuerto " + aeropuertoSeleccionado.nombre);
             Interfaz3 terceraVentana = new Interfaz3(tercerFrame);
 
             tercerFrame.setContentPane(terceraVentana.getcompa());
             tercerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             tercerFrame.pack();
-            tercerFrame.setSize(720, 720);
+            tercerFrame.setSize(650, 500);
             tercerFrame.setLocationRelativeTo(null);
             tercerFrame.setResizable(false);
             tercerFrame.setVisible(true);
@@ -215,7 +215,7 @@ public class Interfaz2 {
                 frame.setContentPane(ventana.getAero());
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
-                frame.setSize(720, 720);
+                frame.setSize(650, 500);
                 frame.setLocationRelativeTo(null);
                 frame.setResizable(false);
                 frame.setVisible(true);

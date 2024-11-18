@@ -25,7 +25,7 @@ public class Interfaz {
                 segundoFrame.setContentPane(segundaVentana.getAero());
                 segundoFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 segundoFrame.pack();
-                segundoFrame.setSize(720, 720);
+                segundoFrame.setSize(650, 500);
                 segundoFrame.setLocationRelativeTo(null);
                 segundoFrame.setResizable(false);
                 segundoFrame.setVisible(true);

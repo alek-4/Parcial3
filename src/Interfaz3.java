@@ -1,7 +1,6 @@
 import Clases.BD;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -14,46 +13,28 @@ public class Interfaz3 {
     private JPanel compa;
     private JButton cbt;
     private JButton vbt;
-    private JFrame frame;
+    private JFrame parentFrame;
     static Connection connection;
-    private BD Conexion;
     private DefaultListModel<Compania> listModel;
 
     public Interfaz3(JFrame frame) {
-        this.frame = frame;
-
-        // Inicializar componentes
-        compa = new JPanel(new BorderLayout());
+        this.parentFrame = frame;
         listModel = new DefaultListModel<>();
-        list1 = new JList<>(listModel);
-        cbt = new JButton("Continuar");
-        vbt = new JButton("Volver");
+        list1.setModel(listModel);
 
-        // Configurar la lista
+
         list1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         list1.setLayoutOrientation(JList.VERTICAL);
         list1.setVisibleRowCount(-1);
 
-        // Crear y agregar JScrollPane
-        JScrollPane scrollPane = new JScrollPane(list1);
-        compa.add(scrollPane, BorderLayout.CENTER);
 
-        // Panel para botones
-        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        buttonPanel.add(cbt);
-        buttonPanel.add(vbt);
-        compa.add(buttonPanel, BorderLayout.SOUTH);
-
-        // Inicializar conexión y cargar datos
         initialize();
 
-        // Configurar acciones de botones
         cbt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Compania selectedCompania = list1.getSelectedValue();
                 if (selectedCompania != null) {
-                    // Acción para continuar
                     System.out.println("Compañía seleccionada: " + selectedCompania);
                 } else {
                     JOptionPane.showMessageDialog(frame,
@@ -67,8 +48,18 @@ public class Interfaz3 {
         vbt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Acción para volver
-                frame.dispose();
+                JFrame segundoFrame = new JFrame("Aeropuertos");
+                Interfaz2 segundaVentana = new Interfaz2(segundoFrame);
+
+                segundoFrame.setContentPane(segundaVentana.getAero());
+                segundoFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                segundoFrame.pack();
+                segundoFrame.setSize(650, 500);
+                segundoFrame.setLocationRelativeTo(null);
+                segundoFrame.setResizable(false);
+                segundoFrame.setVisible(true);
+
+                parentFrame.dispose();
             }
         });
     }
@@ -93,7 +84,6 @@ public class Interfaz3 {
     }
 
     private void initialize() {
-        Conexion = new BD();
         connectToDatabase();
         if (connection != null) {
             cargarCompaniasAsync();
@@ -102,11 +92,11 @@ public class Interfaz3 {
 
     private void connectToDatabase() {
         try {
-            connection = Conexion.conectar();
+            connection = BD.conectar();
             System.out.println("Conexión establecida correctamente");
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(frame,
+            JOptionPane.showMessageDialog(parentFrame,
                     "Error al conectar con la base de datos: " + e.getMessage(),
                     "Error de conexión",
                     JOptionPane.ERROR_MESSAGE);
@@ -132,7 +122,7 @@ public class Interfaz3 {
                     System.out.println("Carga de compañías completada");
                 } catch (Exception e) {
                     e.printStackTrace();
-                    JOptionPane.showMessageDialog(frame,
+                    JOptionPane.showMessageDialog(parentFrame,
                             "Error durante la carga: " + e.getMessage(),
                             "Error",
                             JOptionPane.ERROR_MESSAGE);
@@ -145,12 +135,12 @@ public class Interfaz3 {
     }
 
     private JDialog createLoadingDialog() {
-        JDialog loadingDialog = new JDialog(frame, "Cargando compañías...", false);
+        JDialog loadingDialog = new JDialog(parentFrame, "Cargando compañías...", false);
         JProgressBar progressBar = new JProgressBar();
         progressBar.setIndeterminate(true);
         loadingDialog.add(progressBar);
         loadingDialog.setSize(200, 60);
-        loadingDialog.setLocationRelativeTo(frame);
+        loadingDialog.setLocationRelativeTo(parentFrame);
         return loadingDialog;
     }
 
@@ -181,7 +171,7 @@ public class Interfaz3 {
             SwingUtilities.invokeLater(() -> {
                 System.out.println("Total de compañías cargadas: " + finalCount);
                 if (finalCount == 0) {
-                    JOptionPane.showMessageDialog(frame,
+                    JOptionPane.showMessageDialog(parentFrame,
                             "No se encontraron compañías en la base de datos",
                             "Información",
                             JOptionPane.INFORMATION_MESSAGE);
@@ -191,7 +181,7 @@ public class Interfaz3 {
         } catch (SQLException e) {
             e.printStackTrace();
             SwingUtilities.invokeLater(() -> {
-                JOptionPane.showMessageDialog(frame,
+                JOptionPane.showMessageDialog(parentFrame,
                         "Error al cargar las compañías: " + e.getMessage(),
                         "Error de datos",
                         JOptionPane.ERROR_MESSAGE);
@@ -211,7 +201,7 @@ public class Interfaz3 {
                 frame.setContentPane(ventana.getcompa());
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
-                frame.setSize(720, 720);
+                frame.setSize(400, 500);
                 frame.setLocationRelativeTo(null);
                 frame.setResizable(false);
                 frame.setVisible(true);
