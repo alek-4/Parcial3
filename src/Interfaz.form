@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Interfaz">
+  <grid id="27dc6" binding="usuario" layout-manager="GridLayoutManager" row-count="6" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="10" left="10" bottom="10" right="10"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties>
+      <background color="-16044240"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="1a8a2" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1576449"/>
+          <font name="Bauhaus 93" size="72" style="1"/>
+          <foreground color="-1576449"/>
+          <text value="REGISTRO"/>
+        </properties>
+      </component>
+      <component id="1efb9" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Berlin Sans FB Demi" size="20" style="1"/>
+          <foreground color="-1576449"/>
+          <text value="Nombre"/>
+        </properties>
+      </component>
+      <component id="1463e" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-16376546"/>
+          <font name="Berlin Sans FB Demi" size="20" style="1"/>
+          <foreground color="-1576449"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="f60db" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Berlin Sans FB Demi" size="20" style="1"/>
+          <foreground color="-1576449"/>
+          <text value="Nacionalidad"/>
+        </properties>
+      </component>
+      <component id="d78d4" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-16376546"/>
+          <font name="Berlin Sans FB Demi" size="20" style="1"/>
+          <foreground color="-1576449"/>
+        </properties>
+      </component>
+      <component id="2fc1c" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Berlin Sans FB Demi" size="20" style="1"/>
+          <foreground color="-1576449"/>
+          <text value="Pasaporte"/>
+        </properties>
+      </component>
+      <component id="f9a7c" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-16376546"/>
+          <font name="Berlin Sans FB Demi" size="20" style="1"/>
+          <foreground color="-1576449"/>
+        </properties>
+      </component>
+      <component id="7e606" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Berlin Sans FB Demi" size="20" style="1"/>
+          <foreground color="-1576449"/>
+          <text value=" ID Pasajero"/>
+        </properties>
+      </component>
+      <component id="5c5c" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-16376546"/>
+          <font name="Berlin Sans FB Demi" size="20" style="1"/>
+          <foreground color="-1576449"/>
+        </properties>
+      </component>
+      <component id="b5911" class="javax.swing.JButton" binding="sbtn">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-16376546"/>
+          <font name="Berlin Sans FB Demi" size="20" style="1"/>
+          <foreground color="-1576449"/>
+          <text value="Salir"/>
+        </properties>
+      </component>
+      <component id="6da5b" class="javax.swing.JButton" binding="cbtn">
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-16376546"/>
+          <font name="Berlin Sans FB Demi" size="20" style="1"/>
+          <foreground color="-1576449"/>
+          <text value="Continuar"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
