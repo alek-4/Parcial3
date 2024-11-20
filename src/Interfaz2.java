@@ -61,7 +61,7 @@ public class Interfaz2 {
             public void actionPerformed(ActionEvent e) {
                 parentFrame.dispose();
 
-                JFrame frame = new JFrame("Primera Interfaz");
+                JFrame frame = new JFrame("Registro");
                 Interfaz interfaz = new Interfaz();
                 interfaz.frame = frame;
 
@@ -131,7 +131,7 @@ public class Interfaz2 {
             tercerFrame.setContentPane(terceraVentana.getcompa());
             tercerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             tercerFrame.pack();
-            tercerFrame.setSize(650, 500);
+            tercerFrame.setSize(500, 650);
             tercerFrame.setLocationRelativeTo(null);
             tercerFrame.setResizable(false);
             tercerFrame.setVisible(true);

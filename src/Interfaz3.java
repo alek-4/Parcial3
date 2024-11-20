@@ -3,6 +3,8 @@ import Clases.BD;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,17 +18,27 @@ public class Interfaz3 {
     private JFrame parentFrame;
     static Connection connection;
     private DefaultListModel<Compania> listModel;
+    private static Compania compaSeleccionado;
 
     public Interfaz3(JFrame frame) {
         this.parentFrame = frame;
         listModel = new DefaultListModel<>();
         list1.setModel(listModel);
 
-
         list1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         list1.setLayoutOrientation(JList.VERTICAL);
         list1.setVisibleRowCount(-1);
 
+
+        list1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent evt) {
+                if (evt.getClickCount() == 2) {
+                    compaSeleccionado = list1.getSelectedValue();
+                    PasarCompañia();
+                }
+            }
+        });
 
         initialize();
 
@@ -36,6 +48,7 @@ public class Interfaz3 {
                 Compania selectedCompania = list1.getSelectedValue();
                 if (selectedCompania != null) {
                     System.out.println("Compañía seleccionada: " + selectedCompania);
+                    PasarCompañia();
                 } else {
                     JOptionPane.showMessageDialog(frame,
                             "Por favor, seleccione una compañía",
@@ -65,8 +78,8 @@ public class Interfaz3 {
     }
 
     public static class Compania {
-        int idCompania;
-        String nombre;
+        private int idCompania;
+        private String nombre;
 
         public Compania(int idCompania, String nombre) {
             this.idCompania = idCompania;
@@ -80,6 +93,10 @@ public class Interfaz3 {
 
         public int getIdCompania() {
             return idCompania;
+        }
+
+        public String getNombre() {
+            return nombre;
         }
     }
 
@@ -189,6 +206,23 @@ public class Interfaz3 {
         }
     }
 
+    private void PasarCompañia() {
+        if (compaSeleccionado != null) {
+            JFrame cuartoFrame = new JFrame("Vuelos de la Compañía " + compaSeleccionado.getNombre());
+            Interfaz4 cuartaVentana = new Interfaz4(cuartoFrame);
+
+            cuartoFrame.setContentPane(cuartaVentana.getvuelos());
+            cuartoFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            cuartoFrame.pack();
+            cuartoFrame.setSize(500, 650);
+            cuartoFrame.setLocationRelativeTo(null);
+            cuartoFrame.setResizable(false);
+            cuartoFrame.setVisible(true);
+
+            parentFrame.dispose();
+        }
+    }
+
     public JPanel getcompa() {
         return compa;
     }
@@ -201,9 +235,9 @@ public class Interfaz3 {
                 frame.setContentPane(ventana.getcompa());
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
-                frame.setSize(400, 500);
                 frame.setLocationRelativeTo(null);
                 frame.setResizable(false);
+                frame.setSize(650, 1000);
                 frame.setVisible(true);
             }
         });
