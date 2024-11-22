@@ -31,7 +31,7 @@
           <text value="Nombre"/>
         </properties>
       </component>
-      <component id="1463e" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="1463e" class="javax.swing.JTextField" binding="No">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -54,7 +54,7 @@
           <text value="Nacionalidad"/>
         </properties>
       </component>
-      <component id="d78d4" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+      <component id="d78d4" class="javax.swing.JTextField" binding="Na">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -76,7 +76,7 @@
           <text value="Pasaporte"/>
         </properties>
       </component>
-      <component id="f9a7c" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+      <component id="f9a7c" class="javax.swing.JTextField" binding="Pa">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -88,17 +88,7 @@
           <foreground color="-1576449"/>
         </properties>
       </component>
-      <component id="7e606" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="Berlin Sans FB Demi" size="20" style="1"/>
-          <foreground color="-1576449"/>
-          <text value=" ID Pasajero"/>
-        </properties>
-      </component>
-      <component id="5c5c" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+      <component id="5c5c" class="javax.swing.JTextField" binding="ID">
         <constraints>
           <grid row="4" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -130,6 +120,16 @@
           <font name="Berlin Sans FB Demi" size="20" style="1"/>
           <foreground color="-1576449"/>
           <text value="Continuar"/>
+        </properties>
+      </component>
+      <component id="7e606" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Berlin Sans FB Demi" size="20" style="1"/>
+          <foreground color="-1576449"/>
+          <text value=" ID Pasajero"/>
         </properties>
       </component>
     </children>

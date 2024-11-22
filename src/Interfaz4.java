@@ -18,7 +18,7 @@ public class Interfaz4 {
     private JButton volverButton;
     private JFrame parentFrame;
     private DefaultListModel<flight> listModel;
-    private static flight vueloselccionado;
+    static flight vueloselccionado;
     static Connection connection;
 
     public Interfaz4(JFrame frame) {
@@ -226,7 +226,7 @@ public class Interfaz4 {
             quintoFrame.setContentPane(quintaVentana.getrecibo());
             quintoFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             quintoFrame.pack();
-            quintoFrame.setSize(900, 650);
+            quintoFrame.setSize(1000, 550);
             quintoFrame.setLocationRelativeTo(null);
             quintoFrame.setResizable(false);
             quintoFrame.setVisible(true);

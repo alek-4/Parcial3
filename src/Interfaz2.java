@@ -26,7 +26,7 @@ public class Interfaz2 {
     boolean privado;
     boolean publico;
     double subvencion;
-    private static Interfaz2 aeropuertoSeleccionado;
+    static Interfaz2 aeropuertoSeleccionado;
 
     public Interfaz2(int id, String nombre, String ciudad, String pais,
                      boolean privado, boolean publico, double subvencion){

@@ -18,7 +18,7 @@ public class Interfaz3 {
     private JFrame parentFrame;
     static Connection connection;
     private DefaultListModel<Compania> listModel;
-    private static Compania compaSeleccionado;
+    static Compania compaSeleccionado;
 
     public Interfaz3(JFrame frame) {
         this.parentFrame = frame;
